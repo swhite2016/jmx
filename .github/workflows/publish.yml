@@ -1,5 +1,9 @@
 name: publish
 on: [push]
+  workflow_call:
+    secrets:
+      REPO_TOKEN:
+        required: true
 jobs:
 publish-hello-docker-image:
 runs-on: ubuntu-latest
