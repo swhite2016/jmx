@@ -12,7 +12,7 @@ uses: docker/login-action@v1
 with:
 registry: swhite2016
 username: ${{ github.actor }}
-password: ${{ pwd }}
+password: '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'
 - name: Build the docker jmx image
 run: |
        docker build . --tag swhite2016/jmx:latest
