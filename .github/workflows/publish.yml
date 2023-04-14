@@ -1,6 +1,6 @@
 name: publish
 on: [push]
-on:
+env:
   workflow_call:
     secrets:
       REPO_TOKEN:
@@ -16,8 +16,8 @@ with:
 registry: swhite2016
 username: ${{ github.actor }}
 password: ${{ secrets.GITHUB_TOKEN }}
-- name: Build the docker-imqbrokerd Docker image
+- name: Build the docker jmx image
 run: |
-       docker build . --tag swhite2016/docker-imqbrokerd:latest
-       docker run swhite2016/docker-imqbrokerd:latest
-       docker swhite2016/docker-imqbrokerd:latest
+       docker build . --tag swhite2016/jmx:latest
+       docker run swhite2016/jmx:latest
+       docker swhite2016/jmx:latest
