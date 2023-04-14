@@ -2,7 +2,7 @@ name: publish
 on: [push]
 jobs:
 publish-hello-docker-image:
-runs-on: centos-latest
+runs-on: ubuntu-latest
 steps:
 - uses: actions/checkout@v2
 - name: Login to GitHub Container Registry
@@ -16,4 +16,3 @@ run: |
        docker build . --tag swhite2016/docker-imqbrokerd:latest
        docker run swhite2016/docker-imqbrokerd:latest
        docker swhite2016/docker-imqbrokerd:latest
-    
