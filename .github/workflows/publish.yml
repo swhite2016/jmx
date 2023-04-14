@@ -1,5 +1,6 @@
 name: publish
 on: [push]
+on:
   workflow_call:
     secrets:
       REPO_TOKEN:
