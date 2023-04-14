@@ -1,0 +1,18 @@
+name: publish
+on: [push]
+jobs:
+publish-hello-docker-image:
+runs-on: centos-latest
+steps:
+- uses: actions/checkout@v2
+- name: Login to GitHub Container Registry
+uses: docker/login-action@v1
+with:
+registry: swhite2016
+username: ${{ github.actor }}
+password: ${{ secrets.GITHUB_TOKEN }}
+- name: Build the docker-imqbrokerd Docker image
+run: |
+       docker build . --tag swhite2016/docker-imqbrokerd:latest
+       docker run swhite2016/docker-imqbrokerd:latest
+       docker swhite2016/docker-imqbrokerd:latest
