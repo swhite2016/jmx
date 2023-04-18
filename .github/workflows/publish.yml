@@ -1,10 +1,11 @@
 name: publish
 on: [push]
+before_script:
+  - export JAVA_HOME="/usr/lib/jvm/java-openjdk"
 jobs:
    publish-jmx-image:
       runs-on: ubuntu-latest
-      before_script:
-       - export JAVA_HOME="/usr/lib/jvm/java-openjdk"
+
       steps:
          - uses: actions/checkout@v2
          - name: Login to GitHub Container Registry
