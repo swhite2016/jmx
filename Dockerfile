@@ -12,6 +12,7 @@ COPY imqenv.conf /opt/imq.tar/imq/etc
 
 EXPOSE 8998 1099
 
+RUN export JAVA_HOME=/usr/local/opt/openjdk/libexec/openjdk.jdk/Contents/Home
 VOLUME /usr/local/opt/openjdk/libexec/openjdk.jdk/Contents/Home/bin:/var/bin
 VOLUME /var/imq
 VOLUME /opt/imq.tar/imq/etc
