@@ -8,7 +8,7 @@ MAINTAINER Susie White  <susie.white@salesforce.com>
 
 RUN mkdir -p /usr/lib/jvm/java-openjdk/bin
 ADD imq.tar /opt/imq.tar
-ADD java /usr/lib/jvm/java-openjdk/bin
+ADD java /usr/lib/jvm/java-openjdk/bin/java
 
 COPY imqenv.conf /opt/imq.tar/imq/etc
 
