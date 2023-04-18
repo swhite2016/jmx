@@ -1,7 +1,5 @@
 name: publish
 on: [push]
-before_script:
-  - export JAVA_HOME="/usr/lib/jvm/java-openjdk"
 jobs:
    publish-jmx-image:
       runs-on: ubuntu-latest

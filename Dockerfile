@@ -8,7 +8,7 @@ MAINTAINER Susie White  <susie.white@salesforce.com>
 
 ADD imq.tar /opt/imq.tar
 
-COPY java /usr/lib/jvm/java-openjdk/bin/java
+COPY java /opt/imq.tar/imq/bin
 COPY imqenv.conf /opt/imq.tar/imq/etc
 
 EXPOSE 8998 1099
