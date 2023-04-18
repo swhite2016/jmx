@@ -2,7 +2,7 @@
 # This dockerfile will setup a centos container with OpenJDK installed on it
 ############################################################################
 
-FROM swhite2016/jmx
+FROM node:alpine
 
 MAINTAINER Susie White <susie.white@salesforce.com>
 
