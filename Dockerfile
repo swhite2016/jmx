@@ -4,7 +4,7 @@
 
 FROM node:alpine
 
-MAINTAINER Susie White <susie.white@salesforce.com>
+MAINTAINER Susie White  <susie.white@salesforce.com>
 
 ADD imq.tar /opt/imq.tar
 
