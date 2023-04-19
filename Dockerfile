@@ -41,4 +41,4 @@ VOLUME /opt/imq.tar/imq/etc
 
 RUN ls -l /usr/lib/jvm/java-openjdk/bin
 
-ENTRYPOINT ["/opt/imq.tar/imq/bin/imqbrokerd", "-vmargs", "-d64", "-port", "8998", "$JAVA_HOME/bin/java"]
+ENTRYPOINT ["/opt/imq.tar/imq/bin/imqbrokerd", "-vmargs", "-d64", "-port", "8998"]
