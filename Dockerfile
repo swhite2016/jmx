@@ -6,7 +6,7 @@ FROM node:alpine
 MAINTAINER Susie White  <susie.white@salesforce.com>
 
 ADD imq.tar /opt/imq.tar
-RUN mkdir /opt/java/bin
+RUN mkdir -p    /opt/java/bin
 
 COPY imqenv.conf /opt/imq.tar/imq/etc
 COPY jar    /opt/java/bin
