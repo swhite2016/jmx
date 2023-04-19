@@ -14,7 +14,7 @@ ENV JDK_HASH_FILE="${JDK_ARJ_FILE}.sha2"
 ENV JDK_ARJ_FILE="openjdk-${JDK_VERSION}.tar.gz"
 # target JDK installation names
 ENV JAVA_MINIMAL="/usr/lib/jvm"
-ENV JAVA_HOME="/usr/lib/jvm/java-openjdk"
+ENV JAVA_HOME="/usr/lib/jvm/jdk-11.0.1"
 ENV PATH="$JAVA_HOME:$PATH"
 
 # downlodad JDK to the local file
@@ -27,7 +27,7 @@ RUN { \
         tar xf "$JDK_ARJ_FILE" -C "$JAVA_MINIMAL" ; \
     }
 
-RUN mv /usr/lib/jvm/jdk-11.0.1 /usr/lib/jvm/java-openjdk
+#RUN mv /usr/lib/jvm/jdk-11.0.1 /usr/lib/jvm/java-openjdk
 ENV PATH="$PATH:$JAVA_HOME/bin"
 
 ADD imq.tar /opt/imq.tar
@@ -39,8 +39,8 @@ EXPOSE 8998 1099
 VOLUME /var/imq
 VOLUME /opt/imq.tar/imq/etc
 
-RUN ls -l /usr/lib/jvm/java-openjdk/bin
+RUN ls -l /usr/lib/jvm/jdk-11.0.1/bin
 RUN echo $PATH
-RUN /usr/lib/jvm/java-openjdk/bin/java -version
+RUN /usr/lib/jvm/jdk-11.0.1/bin/java -version
 
 ENTRYPOINT ["/opt/imq.tar/imq/bin/imqbrokerd", "-vmargs", "-d64", "-port", "8998"]
