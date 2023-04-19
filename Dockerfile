@@ -6,7 +6,7 @@ FROM node:alpine
 MAINTAINER Susie White  <susie.white@salesforce.com>
 
 ADD imq.tar /opt/imq.tar
-RUN yum -y install java java-11-openjdk
+RUN dnf -y install java java-11-openjdk
 
 COPY imqenv.conf /opt/imq.tar/imq/etc
 RUN export JAVA_HOME=/usr/lib/jvm/java-openjdk
