@@ -40,8 +40,8 @@ VOLUME /var/imq
 VOLUME /opt/imq.tar/imq/etc
 
 RUN { \
-      echo "Debug messages..." && \
-      $JAVA_HOME/bin/java -version ; \
+        echo "Debug messages..." && \
+        $JAVA_HOME/bin/java -version ; \
 }
 
 ENTRYPOINT ["/opt/imq.tar/imq/bin/imqbrokerd", "-vmargs", "-d64", "-port", "8998"]
