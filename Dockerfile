@@ -44,4 +44,4 @@ EXPOSE 8998 1099
 VOLUME /var/imq
 VOLUME /opt/imq.tar/imq/etc
 
-ENTRYPOINT ["/opt/imq.tar/imq/bin/imqbrokerd", "-vmargs", "-d64", "-port", "8998"]
+ENTRYPOINT ["/opt/imq.tar/imq/bin/imqbrokerd", "-vmargs", "-d64", "-port", "8998", "/opt/java/bin/java"]
