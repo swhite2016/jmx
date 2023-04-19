@@ -11,9 +11,10 @@ jobs:
            with:
              registry: ghcr.io
              username: ${{ github.actor }}
-             password: ${{ secrets.GIT_DOCKER_PAT }}
+             password: ${{ secrets.GITHUB_TOKEN }}
          - name: Build the jmx Docker image
            run: |
              docker build . --tag ghcr.io/swhite2016/jmx:latest
+             docker run ghcr.io/swhite2016/jmx:latest
              docker push ghcr.io/swhite2016/jmx:latest
 
