@@ -38,4 +38,6 @@ EXPOSE 8998 1099
 VOLUME /var/imq
 VOLUME /opt/imq.tar/imq/etc
 
+RUN ls -l /usr/lib/jvm/java-openjdk
+
 ENTRYPOINT ["/opt/imq.tar/imq/bin/imqbrokerd", "-vmargs", "-d64", "-port", "8998", "$JAVA_HOME/bin/java"]
