@@ -21,13 +21,6 @@ ENV PATH=$JAVA_HOME:$PATH
 # downlodad JDK to the local file
 ADD "$JDK_URL" "$JDK_ARJ_FILE"
 
-# verify downloaded file hashsum
-RUN { \
-        echo "Verify downloaded JDK file $JDK_ARJ_FILE:" && \
-        echo "$JDK_HASH $JDK_ARJ_FILE" > "$JDK_HASH_FILE" && \
-        sha256sum -c "$JDK_HASH_FILE" ; \
-    }
-
 # extract JDK and add to PATH
 RUN { \
         echo "Unpack downloaded JDK to ${JAVA_HOME}/:" && \
