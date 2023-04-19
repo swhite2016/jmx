@@ -13,10 +13,9 @@ ENV JDK_HASH="7a6bb980b9c91c478421f865087ad2d69086a0583aeeb9e69204785e8e97dcfd"
 ENV JDK_HASH_FILE="${JDK_ARJ_FILE}.sha2"
 ENV JDK_ARJ_FILE="openjdk-${JDK_VERSION}.tar.gz"
 # target JDK installation names
-ENV OPT="/opt"
 ENV JAVA_MINIMAL="/usr/lib/jvm"
-ENV JAVA_HOME=/usr/lib/jvm/java-openjdk
-ENV PATH=$JAVA_HOME:$PATH
+ENV JAVA_HOME="/usr/lib/jvm/java-openjdk"
+ENV PATH="$JAVA_HOME:$PATH"
 
 # downlodad JDK to the local file
 ADD "$JDK_URL" "$JDK_ARJ_FILE"
@@ -25,8 +24,9 @@ ADD "$JDK_URL" "$JDK_ARJ_FILE"
 RUN { \
         echo "Unpack downloaded JDK to ${JAVA_MINIMAL}/:" && \
         mkdir -p "$JAVA_MINIMAL" && \
-        tar xf "$JDK_ARJ_FILE" -C "$JAVA_MINIMAL" ; \
+        tar xf "$JDK_ARJ_FILE" -C "$JAVA_MINIMAL" \
     }
+
 RUN mv /usr/lib/jvm/jdk-11.0.1 /usr/lib/jvm/java-openjdk
 ENV PATH="$PATH:$JAVA_HOME/bin"
 
