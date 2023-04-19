@@ -38,6 +38,7 @@ EXPOSE 8998 1099
 
 VOLUME /var/imq
 VOLUME /opt/imq.tar/imq/etc
+VOLUME /usr/lib/jvm/jdk-11.0.1
 
 RUN ls -l /usr/lib/jvm/jdk-11.0.1/bin
 RUN echo $PATH
