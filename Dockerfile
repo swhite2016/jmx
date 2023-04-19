@@ -42,6 +42,5 @@ VOLUME /usr/lib/jvm/jdk-11.0.1
 
 RUN ls -l /usr/lib/jvm/jdk-11.0.1/bin
 RUN echo $PATH
-RUN /usr/lib/jvm/jdk-11.0.1/bin/java -version
-
+ENTRYPOINT [ "/usr/lib/jvm/jdk-11.0.1/bin/java", "-version" ]
 ENTRYPOINT ["/opt/imq.tar/imq/bin/imqbrokerd", "-vmargs", "-d64", "-port", "8998"]
