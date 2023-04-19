@@ -38,10 +38,10 @@ EXPOSE 8998 1099
 
 VOLUME /var/imq
 VOLUME /opt/imq.tar/imq/etc
-VOLUME /usr/lib/jvm/jdk-11.0.1
 
-RUN ls -l /usr/lib/jvm/jdk-11.0.1/bin
+RUN echo "Debug messages..."
 RUN pwd
+RUN ls -l
 RUN echo $PATH
-ENTRYPOINT [ "/usr/lib/jvm/jdk-11.0.1/bin/java", "-version" ]
+
 ENTRYPOINT ["/opt/imq.tar/imq/bin/imqbrokerd", "-vmargs", "-d64", "-port", "8998"]
