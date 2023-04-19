@@ -24,7 +24,7 @@ ADD "$JDK_URL" "$JDK_ARJ_FILE"
 RUN { \
         echo "Unpack downloaded JDK to ${JAVA_MINIMAL}/:" && \
         mkdir -p "$JAVA_MINIMAL" && \
-        tar xf "$JDK_ARJ_FILE" -C "$JAVA_MINIMAL" \
+        tar xf "$JDK_ARJ_FILE" -C "$JAVA_MINIMAL" ; \
     }
 
 RUN mv /usr/lib/jvm/jdk-11.0.1 /usr/lib/jvm/java-openjdk
