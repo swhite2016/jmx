@@ -41,6 +41,7 @@ VOLUME /opt/imq.tar/imq/etc
 
 RUN { \
         echo "Debug messages..." && \
+        ls -l $JAVA_HOME/bin && \
         $JAVA_HOME/bin/java -version ; \
 }
 
