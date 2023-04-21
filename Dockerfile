@@ -45,4 +45,6 @@ RUN { \
         $JAVA_HOME/bin/java -version ; \
 }
 
+CMD ["java", "-version"]
+
 ENTRYPOINT ["/opt/imq.tar/imq/bin/imqbrokerd", "-vmargs", "-d64", "-port", "8998"]
